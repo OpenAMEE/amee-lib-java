@@ -1,0 +1,39 @@
+<project name="AMEEJavaClient" basedir="." default="main">
+
+    <property name="src.dir" value="src"/>
+    <property name="libs.dir" value="libs"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="jar.dir" value="${build.dir}/jar"/>
+
+    <path id="classpath">
+        <fileset dir="${libs.dir}" includes="**/*.jar"/>
+    </path>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="compile_1_5">
+        <mkdir dir="${classes.dir}/1.5"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}/1.5" classpathref="classpath" target="1.5"/>
+    </target>
+
+    <target name="jar_1_5" depends="compile_1_5">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.1.5.jar" basedir="${classes.dir}/1.5"/>
+    </target>
+
+    <target name="compile_1_6">
+        <mkdir dir="${classes.dir}/1.6"/>
+        <javac srcdir="${src.dir}" destdir="${classes.dir}/1.6" classpathref="classpath" target="1.6"/>
+    </target>
+
+    <target name="jar_1_6" depends="compile_1_6">
+        <mkdir dir="${jar.dir}"/>
+        <jar destfile="${jar.dir}/${ant.project.name}.1.6.jar" basedir="${classes.dir}/1.6"/>
+    </target>
+
+    <target name="main" depends="clean,jar_1_5,jar_1_6"/>
+
+</project>
