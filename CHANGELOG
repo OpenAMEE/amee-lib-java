@@ -1,0 +1,99 @@
+=== Version 2.1 ===
+
+Added ability to create profile items without having to have Profile or Category objects.
+Deprecate getProfile() and getProfileItem() functions which actually added, and replaces with addProfile() and addProfileItem().
+
+=== Version 2.0.1 ===
+
+Bugfix for an issue which prevented item creation over HTTPS connections.
+
+=== Version 2.0.0 ===
+
+Support for AMEE API version 2.
+Version 1 API keys are unsupported in this version.
+Better reporting of duplicate resource creation errors.
+Updated all examples for V2 API changes, such as getAmount instead of getAmountPerMonth.
+More examples, such as creating profile item histories.
+Version 2 does not support getProfileCategoryRecursive.
+
+=== Version 0.9 ===
+
+Add support for recursive get, using getProfileCategoryRecursive()
+
+=== Version 0.8.2 ===
+
+Added AmeeContext::setItemsPerPage() to control category paging
+
+=== Version 0.8.1 ===
+Load DataItem refs from ProfileItems
+
+=== Version 0.8 ===
+Add support for creating data items
+
+=== Version 0.7 ===
+Change Java package to com.amee.*
+Added ProfileCopy class.
+Put ItemsPerPage field in AmeeContext.
+New examples in com.amee.client.examples and tweaks to existing examples.
+
+=== Version 0.6 ===
+Fixed bug with re-authentication after authToken had timed out.
+
+=== Version 0.5 ===
+Fixed bug preventing creation of profile item in /metadata.
+
+=== Version 0.4 ===
+
+Delete Profiles.
+Update Profile Item values.
+Tidied cache invalidation cascades for AmeeCategory and AmeeItem instances.
+Fixed invalidation of AmeeProfileCategory after fetching an AmeeProfileItem.
+Some more examples in AmeeSimpleExample.java and AmeeDrillExample.java.
+Add pagination for AmeeCategory.
+Some changes to path handling to support pagination.
+
+=== Version 0.3 ===
+
+Delete Profile Items.
+Fix number format.
+Upon updating Profile Values also invalidate related Profile Item and Profile Category.
+Added AmountPerMonth to AmeeProfileCategory and supporting code.
+Fixed AmountPerMonth in AmeeProfileItem and supporting code. 
+Populate Profile Items at creation.
+Can now update values with AmeeValue.save.
+Allow Cache implementation to be replaced.
+Added AmeeObjectCacheDummyImpl for a dummy no-op cache.
+Renamed AmeeObject {get|set}AmeeObjectType to {get|set}ObjectType.
+Renamed AmeeObject {get|set}AmeeObjectReference to {get|set}ObjectReference.
+Renamed AmeeObjectReference {get|set}AmeeObjectType to {get|set}ObjectType.
+Renamed AmeeDrillDown getAmeeDataItem to getDataItem
+Renamed AmeeDrillDown isAmeeDataItemFound to isDataItemFound
+Renamed AmeeDrillDown getAmeeDataItemUid to getDataItemUid
+Renamed AmeeObjectCacheEntry {get|set}AmeeObjectReference to {get|set}ObjectReference.
+Renamed AmeeObjectCacheEntry {get|set}AmeeObject to {get|set}Object.
+Renamed AmeeObjectFactory refreshAmeeObject to fetch
+Added AmeeObjectFactory save.
+Some changes to AmeeTest.
+Some JavaDoc added.
+Misc. other small changes.
+
+=== Version 0.2 ===
+
+Create Profiles.
+Create Profile Items.
+Added AmeeDrillDown.
+Some refactoring.
+Started caching framework.
+Lots of other stuff...
+
+=== Version 0.1 ===
+
+Significantly restructured model.
+Increased encapsulation (including API interface logic).
+Increased use of inheritence.
+
+=== Version 0.0 ===
+
+Initial preview release.
+Improved source structure.
+Added to Subversion.

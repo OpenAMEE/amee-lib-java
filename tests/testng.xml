@@ -1,0 +1,45 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="amee.clients.java.tests" verbose="1" >
+
+    <test name="V2" >
+        <parameter name="username" value=""/>
+        <parameter name="password" value=""/>
+        <parameter name="baseUrl" value="http://stage.amee.com"/>
+
+        <parameter name="amountUnit" value="ton_us"/>
+        <parameter name="amountPerUnit" value="month"/>
+
+        <groups>
+            <define name="all">
+                <include name="profileitemtest"/>
+                <include name="datatest"/>
+            </define>
+	        <run>
+	            <include name="all"/>
+	        </run>
+	    </groups>
+	    <classes>
+            <class name="com.amee.client.AmeeClientTest" />
+        </classes>
+    </test>
+<!--
+    <test name="V1" >
+        <parameter name="username" value=""/>
+        <parameter name="password" value=""/>
+        <parameter name="baseUrl" value="http://stage.amee.com"/>
+        <groups>
+            <define name="all">
+                <include name="profileitemtest"/>
+                <include name="datatest"/>
+            </define>
+	        <run>
+	            <include name="all"/>
+	        </run>
+	    </groups>
+	    <classes>
+            <class name="com.amee.client.AmeeClientTest" />
+        </classes>
+    </test>
+-->
+</suite>
