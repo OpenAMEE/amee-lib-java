@@ -83,7 +83,7 @@ public class AmeeV2ObjectParser extends AmeeObjectParser {
                     amount.getString("value"),
                     amount.getString("unit"),
                     amount.getString("perUnit"),
-                    amount.getBoolean("default")));
+                    amount.has("default") ? amount.getBoolean("default") : false));
         }
         if (returnObj.has("note")) {
             JSONArray notesArr = returnObj.getJSONArray("note");
